@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   	
   end
 
+  
+
   def update_profile
 	  @user = current_user.update( user_params )
 	  redirect_to users_edit_profile_path, notice: 'Profil resmi başarıyla yüklendi.' 
