@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_topic, only: [:new, :create, :show]
+  before_action :set_topic, only: [:new, :create, :show, :destroy]
 
 	def new
 		@post = Post.new
@@ -21,6 +21,15 @@ class PostsController < ApplicationController
     end
   end
 
+  # DELETE /posts/1
+  # DELETE /posts/1.json
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to @topic, notice: 'Topic was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
     def set_post
