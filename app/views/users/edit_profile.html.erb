@@ -1,0 +1,11 @@
+<h2>User Edit Profile</h2>
+
+<%= form_for current_user, :url => users_update_profile_path, method: :post, :html => { :multipart => true } do |form| %>
+	<p> <%= image_tag(current_user.avatar, size: "300") %> </p>
+	<br>
+	<p> <%= current_user.email %> - Profil resmini güncelle</p>
+	<br>
+  <%= form.file_field :avatar %>
+  <br>
+  <%= form.submit %>
+<% end %>
