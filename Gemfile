@@ -44,4 +44,4 @@ group :development, :test do
 end
 
 gem 'devise'
-
+gem 'friendly_id', '~> 5.1.0'
